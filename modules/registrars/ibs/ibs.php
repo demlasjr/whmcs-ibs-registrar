@@ -1389,6 +1389,27 @@ function ibs_RegisterDomain($params)
         }
     }
 
+    if ($tld === "es") {
+        if (isset($params["additionalfields"]["estldidformtype"])) {
+            $data["registrant_tipo-identificacion"] = $params["additionalfields"]["estldidformtype"];
+            $data["admin_tipo-identificacion"] = $params["additionalfields"]["estldidformtype"];
+            $data["technical_tipo-identificacion"] = $params["additionalfields"]["estldidformtype"];
+            $data["billing_tipo-identificacion"] = $params["additionalfields"]["estldidformtype"];
+        }
+        if (isset($params["additionalfields"]["estldidformnum"])) {
+            $data["registrant_identificacion"] = $params["additionalfields"]["estldidformnum"];
+            $data["admin_identificacion"] = $params["additionalfields"]["estldidformnum"];
+            $data["technical_identificacion"] = $params["additionalfields"]["estldidformnum"];
+            $data["billing_identificacion"] = $params["additionalfields"]["estldidformnum"];
+        }
+        if (isset($params["additionalfields"]["estldlegalform"])) {
+            $data["registrant_legalform"] = $params["additionalfields"]["estldlegalform"];
+            $data["admin_legalform"] = $params["additionalfields"]["estldlegalform"];
+            $data["technical_legalform"] = $params["additionalfields"]["estldlegalform"];
+            $data["billing_legalform"] = $params["additionalfields"]["estldlegalform"];
+        }
+    }
+
     if ($tld === "ca") {
         // Legal Entity Type
         if (isset($params["additionalfields"]["calegalentitytype"])) {
