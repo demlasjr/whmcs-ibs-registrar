@@ -100,10 +100,25 @@ $additionaldomainfields[".ca"][] = array("Name" => "WHOIS Opt-out", "LangVar" =>
 
 // .ES
 
-$additionaldomainfields[".es"][] = array("Name" => "ID Form Type", "LangVar" => "estldidformtype", "Type" => "dropdown", "Options" => "Other Identification,Tax Identification Number,Tax Identification Code,Foreigner Identification Number", "Default" => "Other Identification",);
-$additionaldomainfields[".es"][] = array("Name" => "ID Form Number", "LangVar" => "estldidformnum", "Type" => "text", "Size" => "30", "Default" => "", "Required" => true,);
 $additionaldomainfields[".es"][] = array(
-    "Name" => "Legal Form",
+    "Name" => "estldidformtype", 
+    "DisplayName" => "ID Form Type", 
+    "LangVar" => "estldidformtype", 
+    "Type" => "dropdown", 
+    "Options" => implode(
+        ',',
+        array(
+            '1|NIF/DNI',
+            '3|NIE',
+            '0|Other Identification',
+        )
+    ),
+    "Default" => "1|NIF/DNI",
+); 
+$additionaldomainfields[".es"][] = array("Name" => "estldidformnum", "DisplayName" => "ID Form Number", "LangVar" => "estldidformnum", "Type" => "text", "Size" => "10", "Default" => "", "Required" => true,);
+$additionaldomainfields[".es"][] = array(
+    "Name" => "estldlegalform",
+    "DisplayName" => "Forma legal",
     "LangVar" => "estldlegalform",
     "Type" => "dropdown",
     "Options" => implode(
