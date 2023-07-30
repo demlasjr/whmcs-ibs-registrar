@@ -1,0 +1,1 @@
+If you want spanish translation instead of english for .ES domain, replace dist.additionalfields.php with dist.additionalfields.es.php inside this folder (or remove dist.additionalfields.php and rename dist.additionalfields.es.php to dist.additionalfields.php) 
